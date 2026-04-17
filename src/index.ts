@@ -346,7 +346,9 @@ async function handleApprovalResponse(
     // Kill the container so the next wake picks up the new env from
     // resolveProviderContribution.
     killContainer(session.id, 'provider config updated');
-    notify(`Provider config for "${provider}" updated. Your container will restart with the new settings on the next message.`);
+    notify(
+      `Provider config for "${provider}" updated. Your container will restart with the new settings on the next message.`,
+    );
     log.info('set_provider_config approved', {
       approvalId: approval.approval_id,
       userId,
